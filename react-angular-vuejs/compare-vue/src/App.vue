@@ -12,6 +12,8 @@
             aria-label="menu"
             aria-expanded="false"
             data-target="navbarBasicExample"
+            v-on:click="toggleNav"
+            v-bind:class="{ 'is-active': isActive }"
           >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -19,7 +21,7 @@
           </a>
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu" v-bind:class="{ 'is-active': isActive }">
 
           <div class="navbar-end">
             <router-link to="/" class="navbar-item r-item">Home</router-link>
@@ -48,7 +50,17 @@
 
 <script>
 export default {
-  name: "App"
+  name: "App",
+  data: function() {
+    return {
+      isActive: false
+    }
+  },
+  methods: {
+    toggleNav: function() {
+      this.isActive = !this.isActive;
+    }
+  }
 };
 </script>
 
@@ -71,5 +83,6 @@ export default {
       color: gray
       &:hover
         background-color: #f1f1f1
-
+  .navbar-burger span
+    background-color: #c1c1c1
 </style>

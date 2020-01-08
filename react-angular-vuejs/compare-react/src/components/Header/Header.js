@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Header.sass';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   render() {
@@ -28,10 +29,10 @@ class Header extends Component {
                 <div id="navbarBasicExample" className="navbar-menu">
 
                 <div className="navbar-end">
-                    <a href="#" className="navbar-item r-item">Home</a>
-                    <a href="#" className="navbar-item r-item">Features</a>
-                    <a href="#" className="navbar-item r-item">About</a>
-                    <a href="#" className="navbar-item r-item">FAQ</a>
+                    <Link to="/" className="navbar-item r-item">Home</Link>
+                    <Link to="/faq" className="navbar-item r-item">Features</Link>
+                    <Link to="/faq" className="navbar-item r-item">About</Link>
+                    <Link to="/faq" className="navbar-item r-item">FAQ</Link>
                     <div className="navbar-item">
                     <div className="buttons">
                         <a  href="#" className="button is-primary is-outlined">

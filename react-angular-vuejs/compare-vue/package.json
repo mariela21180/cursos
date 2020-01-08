@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.19.1",
     "bulma": "^0.8.0",
+    "js-yaml": "^3.13.1",
     "mem": "^6.0.1",
     "serialize-javascript": "^2.1.2",
     "vue": "^2.5.2",

@@ -14,7 +14,7 @@
     "bulma": "^0.8.0",
     "js-yaml": "^3.13.1",
     "mem": "^6.0.1",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^3.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

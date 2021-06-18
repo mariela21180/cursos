@@ -38,10 +38,14 @@ class Text extends Component {
   }
 }
 
+Text.defaultProps = {
+  title: <h1>Título</h1>
+}
+
 class Contador extends Component {
-  constructor () {
-    super()
-    this.state = {contador: 1}
+  constructor (props) {
+    super(props)
+    this.state = {contador: this.props.contadorInicial}
     
     setInterval(() => {
       this.setState({contador: this.state.contador + 1 })
@@ -60,8 +64,8 @@ class Contador extends Component {
   }
 }
 
-Text.defaultProps = {
-  title: <h1>Título</h1>
+Contador.defaultProps = {
+  contadorInicial: 0
 }
 
 class App extends Component {
@@ -88,7 +92,7 @@ class App extends Component {
             text="Probando"
             title={<h1>Hola</h1>}
           />
-          <Contador/>
+          <Contador contadorInicial={100}/>
         </header>
       </div>
     );

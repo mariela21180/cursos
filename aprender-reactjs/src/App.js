@@ -39,7 +39,14 @@ class Text extends Component {
 }
 
 class Contador extends Component {
-  state = {contador: 1}
+  constructor () {
+    super()
+    this.state = {contador: 1}
+    
+    setInterval(() => {
+      this.setState({contador: this.state.contador + 1 })
+    }, 1000)
+  }
 
   render() {
     const contador = 0 

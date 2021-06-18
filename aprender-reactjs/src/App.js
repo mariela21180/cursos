@@ -10,6 +10,11 @@ class Hello extends Component {
   }
 }
 class Text extends Component {
+  constructor () {
+    super()
+    this.state = {contador: 1}
+  }
+
   render() {
     const {
       arrayOfNumbers,
@@ -21,11 +26,15 @@ class Text extends Component {
       title
     } = this.props
 
+    const contador = 0 
+
     const textoSegunBool = isActivated ? 'On' : 'Off'
     const mapperNumbers = arrayOfNumbers.map( multiply )
 
     return (
       <div>
+        <p>{contador}</p>
+        <p>{this.state.contador}</p>
         <p>{title}</p>
         <p>{text}</p>
         <p>{number}</p>

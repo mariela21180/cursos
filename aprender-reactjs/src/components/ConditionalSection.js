@@ -19,18 +19,13 @@ export default class ConditionalSection extends Component {
         this.state = {mostrarA: this.props.mostrarA}
     }
     
-    useConditionalRendering(mostrarA) {
-        if (mostrarA) {
-            return <ComponenteA/>        
-        } else {
-            return <ComponenteB/>        
-        }
-    }
     render() {
         return (
         <div>
-            <h4>Conditional Rendering</h4>
-            {this.useConditionalRendering(this.state.mostrarA)}
+            {this.state.mostrarA 
+                ? <ComponenteA/>
+                : <ComponenteB/>
+            }
         </div>
         )
     }

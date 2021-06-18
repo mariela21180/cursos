@@ -39,10 +39,7 @@ class Text extends Component {
 }
 
 class Contador extends Component {
-  constructor () {
-    super()
-    this.state = {contador: 1}
-  }
+  state = {contador: 1}
 
   render() {
     const contador = 0 

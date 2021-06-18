@@ -6,7 +6,7 @@ import ConditionalSection from '../components/ConditionalSection';
 export default class Section4 extends Component {
   render() {
     return (
-      <ConditionalSection mostrarA={false}/>
+      <ConditionalSection isUsedLogged={true}/>
     );
   }
 }

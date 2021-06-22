@@ -10,9 +10,9 @@ export default class Section8 extends Component {
   render() {
     return (
       <div>    
-        {/* <CicloDeVida1/> */}
-        {/* <CicloDeVida2/> */}
-        {/* <CicloDeVida3/> */}
+        <CicloDeVida1/>
+        <CicloDeVida2/>
+        <CicloDeVida3/>
         <CicloDeVida4/>
       </div>
     );

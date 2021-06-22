@@ -2,13 +2,13 @@ import './assets/css/App.css';
 import { Component } from 'react';
 
 //Pages
-import Section8 from './pages/Section8';
+import Section9 from './pages/Section9';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Section8/>
+        <Section9/>
       </div>
     );
   }

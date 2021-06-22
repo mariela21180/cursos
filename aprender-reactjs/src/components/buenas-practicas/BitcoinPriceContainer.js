@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import BitcoinPrice from './BitcoinPrice'
+import BitcoinPriceStateless from './BitcoinPriceStateless'
 
 export default class BitcoinPriceContainer extends Component {
     state = { bpi: {} }
@@ -15,7 +16,13 @@ export default class BitcoinPriceContainer extends Component {
 
     render() {
         return (
-            <BitcoinPrice bpi={this.state.bpi} />   
+            <div>
+                <p>Usando componente del patrón contenido</p>
+                <BitcoinPrice bpi={this.state.bpi} />   
+
+                <p>Usando componente stateless</p>
+                <BitcoinPriceStateless bpi={this.state.bpi} />
+            </div>
         ) 
     }
 }

@@ -5,6 +5,7 @@ import ConditionalSection from '../components/ConditionalSection';
 import Listas from '../components/Listas';
 import Eventos from '../components/Eventos';
 import Formularios from '../components/Formularios';
+import ChildrensYPropTypes from '../components/ChildrensYPropTypes';
 
 export default class Section4 extends Component {
   render() {
@@ -15,6 +16,8 @@ export default class Section4 extends Component {
         <Listas/>
         <hr/>
         <Eventos/>
+        <hr/>
+        <ChildrensYPropTypes/>
         <hr/>
         <Formularios/>
       </div>

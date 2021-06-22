@@ -1,19 +1,9 @@
 import React, {Component} from 'react'
 
 export default class BitcoinPrice extends Component {
-    state = { bpi: {} }
-    
-    componentDidMount() {
-        fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
-        .then(res => res.json()) 
-        .then(data => {
-            const { bpi } = data
-            this.setState ( { bpi })
-        })
-    }
 
     _renderCurrencies() {
-        const { bpi } = this.state
+        const { bpi } = this.props
         const currencies = Object.keys(bpi)
         return currencies.map( currency => (
             <div key={currency}>
@@ -24,9 +14,11 @@ export default class BitcoinPrice extends Component {
     }
 
     render() {
-     return <div style={{'text-align': 'left'}}>
+        return (
+            <div style={{ textAlign: 'left'}}>
                 <p><strong>Bitcoin Price index</strong></p>
                 { this._renderCurrencies() } 
-            </div>   
+            </div>
+        )
     }
 }

@@ -97,7 +97,7 @@ export default class CicloDeVida2 extends Component {
                 <h4>8. vuelve a usar el 3. render</h4>     
                 <p>La diferencia es que acá usará las nuevas props y evaluará que renderizar. Si se deja de usar algun componente en el updat, tambien hará el un-mount de esos componentes.</p>
                 <h4>9. componentDidUpdate(prevProps, prevState)</h4>     
-                <p>Luego de renderizar por actualización, este método se dispara con los valores previos como parámetro. es parecido al 4. componentDidMount (se puede llamar a una API por ejemplo, o se puede mandar un elemento untracking para indicar que se agregó algo al DOM, terminar la animación que empecé en 8., etc)</p>
+                <p>Luego de renderizar por actualización, este método se dispara con los valores previos como parámetro. es parecido al 4. componentDidMount (se puede llamar a una API por ejemplo, o se puede mandar un evento al tracking para indicar que se agregó algo al DOM, terminar la animación que empecé en 8., etc)</p>
             </div>
         )
     }

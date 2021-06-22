@@ -4,6 +4,7 @@ import { Component } from 'react';
 import CicloDeVida1 from '../components/ciclo-de-vida/CicloDeVida1';
 import CicloDeVida2 from '../components/ciclo-de-vida/CicloDeVida2';
 import CicloDeVida3 from '../components/ciclo-de-vida/CicloDeVida3';
+import CicloDeVida4 from '../components/ciclo-de-vida/CicloDeVida4';
 
 export default class Section8 extends Component {
   render() {
@@ -11,7 +12,8 @@ export default class Section8 extends Component {
       <div>    
         {/* <CicloDeVida1/> */}
         {/* <CicloDeVida2/> */}
-        <CicloDeVida3/>
+        {/* <CicloDeVida3/> */}
+        <CicloDeVida4/>
       </div>
     );
   }

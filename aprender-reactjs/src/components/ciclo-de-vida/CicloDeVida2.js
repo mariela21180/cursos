@@ -2,10 +2,12 @@ import React, {Component, component} from 'react';
 import PropTypes from 'prop-types'
 
 const ANIMAL_IMAGES = {
+    panda: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/26/3c/87.jpg',
     cat: 'https://www.alleycat.org/wp-content/uploads/2014/06/About_PhotoBanners_344x361.jpg',
     dolphin: 'https://pyxis.nymag.com/v1/imgs/260/250/46184df43c05ab8634927f8848667b5ca7-dolphin-beauty-lede.rvertical.w330.jpg',
-    panda: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/26/3c/87.jpg'
 }
+
+const ANIMALS = Object.keys(ANIMAL_IMAGES)
 
 class AnimalImage extends Component {
     state = { src: ANIMAL_IMAGES[this.props.animal]}
@@ -32,7 +34,7 @@ class AnimalImage extends Component {
 }
 
 AnimalImage.propTypes = {
-    animal: PropTypes.oneOf(['cat', 'dolphin', 'panda'])
+    animal: PropTypes.oneOf(ANIMALS)
 }
 
 AnimalImage.defaultProps = {
@@ -40,27 +42,22 @@ AnimalImage.defaultProps = {
 }
 
 export default class CicloDeVida2 extends Component {
-    constructor(props) {
-        console.log('constructor');
-        super(props)
-        this.state = { animal: 'panda' }
-    }
+    state = { animal: 'panda' }
    
+    _renderAnimalButton = (animal) => {
+        return (
+            <button disabled={animal === this.state.animal} key={animal} onClick={() => this.setState({ animal })}>
+                {animal}
+            </button>
+        )
+    }
     render() {
         console.log('render');
         return (
             <div>
                 <h3>Ciclo de Actualización:</h3>
                 <h4>componentWillReceiveProps</h4>     
-                <button onClick={() => this.setState({ animal: 'panda' })}>
-                    Panda
-                </button>
-                <button onClick={() => this.setState({ animal: 'cat' })}>
-                    Cat
-                </button>
-                <button onClick={() => this.setState({ animal: 'dolphin' })}>
-                    Dolphin
-                </button>
+                {ANIMALS.map(this._renderAnimalButton)}
                 <AnimalImage animal={this.state.animal}/>
             </div>
         )

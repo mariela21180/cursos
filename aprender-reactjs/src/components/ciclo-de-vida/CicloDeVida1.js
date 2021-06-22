@@ -9,7 +9,7 @@ export default class CicloDeVida1 extends Component {
     */
 
     constructor(props) {
-        console.log('constructor');
+        console.log('1. constructor');
         super(props) // mandamos las props al constructor de Component
         this.state = { 
             mensajeInicial: 'Mensaje Inicial',
@@ -21,12 +21,12 @@ export default class CicloDeVida1 extends Component {
     }
     
     componentWillMount() {
-        console.log('componentWillMount');
+        console.log('2. componentWillMount');
         this.setState({ mensajeInicial: 'Mensaje modificado'}) // Se puede setear el estado acá. Normalmente se hace directamente en el constructor, pero si el constructor es muy grande, se puede limpiar codigo sacando el seteo del state a este método
     }
 
     componentDidMount() {
-        console.log('componentDidMount');
+        console.log('4. componentDidMount');
         // Acá podemos hacer llamadas a resuperar datos del servidor y escucha eventos, o actualizar estado y props
         this.setState({ otroState: ''}) // Se puede setear estados acá. El render() se va a disparar de nuevo, pero no el DidMount
         document.addEventListener('scroll', () =>  { 
@@ -58,7 +58,7 @@ export default class CicloDeVida1 extends Component {
     }
 
     render() {
-        console.log('render');
+        console.log('3. render');
         /* En este método sólo se debe retornar algo: 
         - un numero:
             return 3
@@ -84,18 +84,21 @@ export default class CicloDeVida1 extends Component {
         return (
             <div>
                 <h3>Ciclo de Montaje:</h3>
-                <h4>constructor</h4>
+                <h4>1. constructor</h4>
                 {this.state.mensajeInicial}
                 <br/>
                 <button onClick={this.handleClick}>
                     Cambiar mensaje
                 </button>
-                <h4>componentWillMount</h4>
+                <h4>2. componentWillMount</h4>
                 <p>El mensaje inicial se seteó a modificado antes del render</p>
-                <h4>componentDidMount</h4>
+                <h4>3. render</h4>
+                <p>Se crean los elementos en el DOM</p>
+                <h4>4. componentDidMount</h4>
+                <p>Este es el momento para traer datos del servidor o de una API. Ejemplo:</p>
                 <p><strong>Bitcoin Price index</strong></p>
                 { this._renderCurrencies() } 
-                <p>Como queremos añadir un evento al scroll, imprimimos mucho contenido</p>
+                <p>También es donde podemos añadir listeners. Ejemplo si queremos añadir un evento al scroll, imprimimos mucho contenido</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra maecenas accumsan lacus vel facilisis volutpat est velit. Massa sapien faucibus et molestie ac feugiat sed. Justo donec enim diam vulputate ut pharetra sit. Amet volutpat consequat mauris nunc congue nisi vitae. Facilisis volutpat est velit egestas. Turpis cursus in hac habitasse. Tellus in metus vulputate eu scelerisque felis imperdiet proin. Ullamcorper eget nulla facilisi etiam dignissim. Nec tincidunt praesent semper feugiat nibh sed pulvinar. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque. Enim lobortis scelerisque fermentum dui faucibus in. Sed augue lacus viverra vitae congue eu consequat ac. Ipsum dolor sit amet consectetur adipiscing elit. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Etiam sit amet nisl purus in mollis nunc. Lectus sit amet est placerat in. Et egestas quis ipsum suspendisse. Lectus quam id leo in.
 
                 Viverra aliquet eget sit amet tellus cras adipiscing enim eu. Senectus et netus et malesuada fames ac. Orci dapibus ultrices in iaculis nunc sed augue lacus. Tempor nec feugiat nisl pretium fusce id velit. Arcu cursus vitae congue mauris rhoncus aenean. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Arcu non sodales neque sodales. Enim blandit volutpat maecenas volutpat blandit. Nulla pharetra diam sit amet nisl suscipit adipiscing. Enim facilisis gravida neque convallis a cras. Et egestas quis ipsum suspendisse ultrices.
@@ -115,11 +118,7 @@ export default class CicloDeVida1 extends Component {
                 Porttitor leo a diam sollicitudin tempor id eu. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Est ante in nibh mauris cursus mattis molestie. Magna ac placerat vestibulum lectus mauris. Eget mauris pharetra et ultrices neque ornare aenean euismod elementum. Malesuada proin libero nunc consequat. Vitae tortor condimentum lacinia quis vel eros donec ac odio. Senectus et netus et malesuada fames. Aliquam ultrices sagittis orci a scelerisque purus. At erat pellentesque adipiscing commodo. Pellentesque pulvinar pellentesque habitant morbi tristique.
 
                 Velit ut tortor pretium viverra. Molestie nunc non blandit massa enim nec dui nunc. Tincidunt dui ut ornare lectus sit. Vulputate sapien nec sagittis aliquam. Risus pretium quam vulputate dignissim suspendisse in est ante in. Dictum varius duis at consectetur lorem. Augue mauris augue neque gravida in fermentum et sollicitudin ac. Cras sed felis eget velit aliquet sagittis id consectetur purus. Ullamcorper malesuada proin libero nunc. Posuere urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Nisl nisi scelerisque eu ultrices. Adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Tristique senectus et netus et malesuada fames ac turpis. Diam donec adipiscing tristique risus nec feugiat in. Phasellus faucibus scelerisque eleifend donec pretium vulputate.</p>
-                <hr/>           
-
-                
-                <h3>Ciclo de Actualización:</h3>
-                <h4>componentWillReceiveProps</h4>     
+                <hr/>   
             </div>
         )
     }

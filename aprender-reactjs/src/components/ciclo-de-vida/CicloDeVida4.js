@@ -41,7 +41,7 @@ export default class CicloDeVida4 extends Component {
             <div>
                 <h3>Ciclo de Error:</h3>
                 <h4>11. componentWillUnmount(error, info)</h4>     
-                <p>Se ejecuta sólo cuando el componente lanza una Exception. Permite manejar errores y excepciones. También captura excepciones de los children, por lo que hay que usarlo en un nivel superior. Si hay un error no controlado, se va a desmontar el arbol de componente hasta encontrar el método que lo controla, o hasta que no quede nada montado. Para evitar el desmonte por completo, hay que usar este método.</p>
+                <p>Se ejecuta sólo cuando el componente lanza una Exception. Permite manejar errores y excepciones. También captura excepciones de los children, por lo que hay que usarlo en un nivel superior. Si hay un error no controlado, se va a desmontar el arbol de componente hasta encontrar el método que lo controla, o hasta que no quede nada montado. Para evitar el desmonte por completo, hay que usar este método. Solo está a partir de la versión React v16.</p>
                 <BotonLanzarError/>     
             </div>
         )

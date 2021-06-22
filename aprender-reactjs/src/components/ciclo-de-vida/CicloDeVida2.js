@@ -1,4 +1,4 @@
-import React, {Component, component} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types'
 
 const ANIMAL_IMAGES = {
@@ -14,12 +14,18 @@ class AnimalImage extends Component {
 
     componentWillReceiveProps(nextProps) {
         //nextProps puede ser diferente a la actual this.props.animal, pero al método va a entrar igual. 
-        console.log('componentWillReceiveProps');
-        console.log(nextProps);
+        console.log('5. componentWillReceiveProps')
         this.setState({ src: ANIMAL_IMAGES[nextProps.animal]})
+    }
+    
+    shouldComponentUpdate(nextProps) {
+        console.log('6. shouldComponentUpdate')
+        //cuando quiero evitar el renderizado según el cambio de props o state que haya recibido, uso este método.
+        return this.props.animal !== nextProps.animal
     }
 
     render() {
+        console.log('3. render');
         return (
             <div>
                 <p>Selected {this.props.animal}</p>
@@ -46,7 +52,7 @@ export default class CicloDeVida2 extends Component {
    
     _renderAnimalButton = (animal) => {
         return (
-            <button disabled={animal === this.state.animal} key={animal} onClick={() => this.setState({ animal })}>
+            <button key={animal} onClick={() => this.setState({ animal })}>
                 {animal}
             </button>
         )
@@ -56,7 +62,10 @@ export default class CicloDeVida2 extends Component {
         return (
             <div>
                 <h3>Ciclo de Actualización:</h3>
-                <h4>componentWillReceiveProps</h4>     
+                <h4>5. componentWillReceiveProps</h4>     
+                <p>El src del state de AnimalImage se tiene que actualizar cada vez que cambia el prop animal con el click de cada botón. Para esto hay que usar el componentWillReceiveProps()</p>
+                <h4>6. shouldComponentUpdate</h4>     
+                <p>El animal clickeado puede ser diferente al actual o no, pero al método va a entrar igual. Puedo deshabilitar el botón del animal actual, o puedo usar shouldComponentUpdate() para evaluar si renderizo o no segun que recibo (si no se sobreescribe, este método devuelve "true", o sea que siempre se va a renderizar)</p>
                 {ANIMALS.map(this._renderAnimalButton)}
                 <AnimalImage animal={this.state.animal}/>
             </div>

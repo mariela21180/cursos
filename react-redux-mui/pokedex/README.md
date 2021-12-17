@@ -1,3 +1,8 @@
+Curso: React JS - Build 5 Projects With (Redux, React Router, MUI)
+URL: https://www.udemy.com/course/learn-react-js-tutorial-build-5-projects-with-redux-react-router-mui/learn/lecture/28843128#overview
+
+_________________________________________________________________________________________________
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

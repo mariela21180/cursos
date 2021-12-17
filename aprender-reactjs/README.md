@@ -1,3 +1,9 @@
+Curso: Aprender React JS
+Curso: https://www.udemy.com/course-dashboard-redirect/?course_id=1418884
+URL: https://www.udemy.com/course-dashboard-redirect/?course_id=1418884
+
+_________________________________________________________________________________________________
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

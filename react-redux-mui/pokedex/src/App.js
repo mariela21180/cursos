@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import AppNavigator from './components/AppNavigator'
+import Pokedex from './containers/Pokedex'
+import PokemonDetails from './containers/PokemonDetails'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    );
-  }
+export default function App() {
+  return (
+    <Router>
+      <AppNavigator/>
+      <Routes>
+        <Route path="/" element={<Pokedex/>} />
+        <Route path="/pokemon/:id" element={<PokemonDetails/>} />
+      </Routes>
+    </Router>
+  )
 }
-
-export default App;

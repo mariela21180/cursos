@@ -1,12 +1,8 @@
-import { useState } from 'react'
+import { useCounter } from '../hooks/useCounter';
 
 export const ContadorConHook = () => {
 
-    const [valor, setValor] = useState<number>(10);
-
-    const acumular = (numero: number) => {
-        setValor(valor + numero);
-    }
+    const { valor, acumular } = useCounter(15);
 
     return (
         <>

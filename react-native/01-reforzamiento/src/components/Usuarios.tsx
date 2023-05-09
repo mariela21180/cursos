@@ -5,6 +5,25 @@ const Usuarios = () => {
 
   const [usuarios, setUsuarios] = useState<Usuario[]>([])
 
+  const renderItem = ( { id, avatar, first_name, last_name, email }: Usuario) => {
+    return (      
+      <tr key={id.toString()}>
+        <td>
+          <img
+            src={avatar}
+            alt={first_name}
+            style={{
+              width: 35,
+              borderRadius: 100
+            }}
+          />
+          </td>
+        <td>{first_name} {last_name}</td>
+        <td>{email}</td>
+      </tr>
+    )
+  }
+
   useEffect(() => {
     //Llamado a API
     reqResApi.get<ReqResListado>('/users')
@@ -35,9 +54,15 @@ const Usuarios = () => {
             </tr>
         </thead>
         <tbody>
-
+          { usuarios.map( renderItem ) }
         </tbody>
       </table>
+
+      <button
+        className='btn btn-primary'
+      >
+        Siguientes
+      </button>
     </>
   )
 }

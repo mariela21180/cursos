@@ -1,12 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { reqResApi } from '../api/reqRes';
+import { ReqResListado, Usuario } from '../interfaces/reqRes';
 const Usuarios = () => {
+
+  const [usuarios, setUsuarios] = useState<Usuario[]>([])
 
   useEffect(() => {
     //Llamado a API
-    reqResApi.get('/users')
+    reqResApi.get<ReqResListado>('/users')
       .then( resp => {
-        console.log(resp.data.data)
+        setUsuarios(resp.data.data)
       })
       .catch( console.log )
   }, [])
@@ -19,6 +22,9 @@ const Usuarios = () => {
       </p>
       <p>
         <a href="http://npmjs.com/package/axios" target="_blank" rel="noopener noreferrer">Axios</a>
+      </p>
+      <p>
+        <a href="http://app.quicktype.io" target="_blank" rel="noopener noreferrer">quicktype - Página para crear interfaces a partir de un JSON - Usar extensión "Paste JSON as Code" para eso mismo</a>
       </p>
       <table className="table">
         <thead>

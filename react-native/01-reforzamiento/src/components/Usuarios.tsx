@@ -24,13 +24,15 @@ const Usuarios = () => {
     )
   }
 
+  const cargarUsuarios = async() => {
+    //Llamado a API dentro de una función Async
+    const resp = await reqResApi.get<ReqResListado>('/users')
+    setUsuarios(resp.data.data)
+  }
+
   useEffect(() => {
     //Llamado a API
-    reqResApi.get<ReqResListado>('/users')
-      .then( resp => {
-        setUsuarios(resp.data.data)
-      })
-      .catch( console.log )
+    cargarUsuarios()
   }, [])
   
   return (
@@ -60,6 +62,7 @@ const Usuarios = () => {
 
       <button
         className='btn btn-primary'
+        onClick={cargarUsuarios}
       >
         Siguientes
       </button>

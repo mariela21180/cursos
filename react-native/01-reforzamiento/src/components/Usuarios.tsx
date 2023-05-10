@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { reqResApi } from '../api/reqRes';
 import { ReqResListado, Usuario } from '../interfaces/reqRes';
 const Usuarios = () => {
 
   const [usuarios, setUsuarios] = useState<Usuario[]>([])
+
+  const paginaRef = useRef(1);
 
   const renderItem = ( { id, avatar, first_name, last_name, email }: Usuario) => {
     return (      
@@ -26,13 +28,24 @@ const Usuarios = () => {
 
   const cargarUsuarios = async() => {
     //Llamado a API dentro de una función Async
-    const resp = await reqResApi.get<ReqResListado>('/users')
-    setUsuarios(resp.data.data)
+    const resp = await reqResApi.get<ReqResListado>('/users', {
+      params: {
+        page: paginaRef.current
+      }
+    })    
+
+    if (resp.data.data.length > 0) {
+      setUsuarios(resp.data.data);
+      paginaRef.current ++;
+    } else {
+      alert('No hay mas registros')
+    }
+
   }
 
   useEffect(() => {
     //Llamado a API
-    cargarUsuarios()
+    // cargarUsuarios()
   }, [])
   
   return (

@@ -4,4 +4,18 @@ https://drive.google.com/drive/folders/1DlXLxoXCUZNZa-P3TA3P8kqeIln3NiIC
 Documentación:
 - https://create-react-app.dev/docs/getting-started/: Usar npx create-react-app my-app --template typescript
 - https://getbootstrap.com/: usar en public/index.html <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+- https://reactnative.dev/docs/environment-setup?guide=native&os=windows&platform=android: Setting up the development environment
 
+
+____________________________________________________
+
+Diferencia entre EXPO CLI y ReactNative CLI - Principal: Expo sirve para ambos IOS y Android, con RN hay que usar cosas específicas para IOS.
+____________________________________________________
+
+Crear proyect0:
+
+- "npx react-native@latest init AwesomeProject --template react-native-template-typescript"
+
+Ejecutar Proyecto: hacerlo desde consola PowerShell y usar el comando: 
+
+- "npx react-native run-android" o "npx react-native start"

@@ -12,10 +12,18 @@ ____________________________________________________
 Diferencia entre EXPO CLI y ReactNative CLI - Principal: Expo sirve para ambos IOS y Android, con RN hay que usar cosas específicas para IOS.
 ____________________________________________________
 
-Crear proyect0:
+Crear proyecto:
 
 - "npx react-native@latest init AwesomeProject --template react-native-template-typescript"
 
-Ejecutar Proyecto: hacerlo desde consola PowerShell y usar el comando: 
+Ver dispositivos conectados: si ya tengo configurado el emulador en Android Studio y/o conectado el celular por USB (con modo desarrollador USB debugging hablitado), ejecutar: 
+- adb devices - muestra los dispositivos conectados
 
-- "npx react-native run-android" o "npx react-native start"
+Ejecutar Proyecto: hacerlo desde consola PowerShell como Administrador y usar el comando: 
+
+- "npx react-native run-android" (o "npx react-native start" si da error, y en el menu poner "a" para Android)
+
+Si dice que el puerto está en uso:
+- Listar los procesos con: netstat -ano | findstr :8081
+- Cerrarlo con: taskkill /PID <PID> /F
+

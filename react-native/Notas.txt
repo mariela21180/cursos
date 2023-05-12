@@ -27,3 +27,15 @@ Si dice que el puerto está en uso:
 - Listar los procesos con: netstat -ano | findstr :8081
 - Cerrarlo con: taskkill /PID <PID> /F
 
+
+Componentes:
+
+Los pages, por convención, al ser mobile, se ponen en una carpeta "src/screens"
+
+Algunos componentes por defecto React Native: 
+View - Es un div 
+Text - Es un p
+
+Estilos:
+
+Se pone todo por attributo "style" al modo React (objeto literar con camelCase en las variables), pero no hacerlo inline, sino creandu un StyleSheet

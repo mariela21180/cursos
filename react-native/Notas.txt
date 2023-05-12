@@ -32,9 +32,10 @@ Componentes:
 
 Los pages, por convención, al ser mobile, se ponen en una carpeta "src/screens"
 
-Algunos componentes por defecto React Native: 
+Algunos componentes por defecto React Native: https://reactnative.dev/docs/components-and-apis 
 View - Es un div 
 Text - Es un p
+Button - No se recomienda usar, porque no se le puede poner style. En lugar usar TouchableOpacity (o sino  TouchableHighlight o TouchableWithoutFeedback)
 
 Estilos:
 

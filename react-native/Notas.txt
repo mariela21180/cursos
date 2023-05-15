@@ -27,6 +27,7 @@ Si dice que el puerto está en uso:
 - Listar los procesos con: netstat -ano | findstr :8081
 - Cerrarlo con: taskkill /PID <PID> /F
 
+____________________________________________________
 
 Componentes:
 
@@ -38,6 +39,8 @@ Algunos componentes por defecto React Native: https://reactnative.dev/docs/compo
 - Button - No se recomienda usar, porque no se le puede poner style. En lugar usar TouchableOpacity (o sino  TouchableHighlight o TouchableWithoutFeedback).
 - TouchableOpacity - Da estilos al hacer click, y dentro se puede poner contenido como View + Text con styles, etc, para, por ejemplo, crear un botón con estilos que yo quiero.
 
+____________________________________________________
+
 Estilos:
 
 Se pone todo por attributo "style" al modo React (objeto literar con camelCase en las variables), pero no hacerlo inline, sino creando un StyleSheet: https://reactnative.dev/docs/stylesheet - Es una abstracción que simula ser un CSS
@@ -47,3 +50,35 @@ style={[
     styles.fabLocation,
     (position === 'left') ? styles.left : styles.right
 ]}
+
+____________________________________________________
+
+Ejecutar codigo para Plataformas específicas:
+
+Para esto se usa el modulo Platform de react-native: https://reactnative.dev/docs/platform-specific-code#content
+
+import {Platform, StyleSheet} from 'react-native';
+
+// Condicional puntual
+const styles = StyleSheet.create({
+  height: Platform.OS === 'ios' ? 200 : 100,
+});
+
+// O método tipo switch:
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    ...Platform.select({
+      ios: {
+        backgroundColor: 'red',
+      },
+      android: {
+        backgroundColor: 'green',
+      },
+      default: {
+        // other platforms, web for example
+        backgroundColor: 'blue',
+      },
+    }),
+  },
+});

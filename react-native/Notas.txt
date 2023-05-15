@@ -34,7 +34,7 @@ Componentes:
 Los pages, por convención, al ser mobile, se ponen en una carpeta "src/screens"
 
 Algunos componentes por defecto React Native: https://reactnative.dev/docs/components-and-apis 
-- View - Es un div 
+- View - Es un div: No es obligatorio que el componente esté envuelto en un div (ejemplo: puedo retornar un <Text> solo si quiero), pero es recomendable envolverlo siempre en un div, por si necesito dasle estilos de posicionamiento o fondo, etc.
 - Text - Es un p
 - Button - No se recomienda usar, porque no se le puede poner style. En lugar usar TouchableOpacity (o sino  TouchableHighlight o TouchableWithoutFeedback).
 - TouchableOpacity - Da estilos al hacer click, y dentro se puede poner contenido como View + Text con styles, etc, para, por ejemplo, crear un botón con estilos que yo quiero.
@@ -82,3 +82,20 @@ const styles = StyleSheet.create({
     }),
   },
 });
+
+____________________________________________________
+
+SafeAreaView: https://reactnative.dev/docs/safeareaview
+
+Es un contenedor para que la app use los limites de la pantalla segun el dispositivo (util por ejemplo en celulares que tienen la camara dentro de la pantalla con un borde redondeado - como el motolola de papá -, para que el contenido se muestre debaj de eso).
+No conviene ponerlo en la raiz del App, porque si quiero poner un color de fondo por ejemplo no llegaría hasta el borde de la pantalla. Por lo general se usa en el main layout.
+
+____________________________________________________
+
+Diseños Flex:
+- https://reactnative.dev/docs/flexbox
+
+* Box Object Model: Alto, ancho, margen, padding, border
+* Position: Absoluta, relativa, top, left, right, bottom 
+* Flexbox: Dirección, hubicación, alineamiento, estirar, encoger, etc.
+

@@ -99,3 +99,17 @@ Diseños Flex:
 * Position: Absoluta, relativa, top, left, right, bottom 
 * Flexbox: Dirección, hubicación, alineamiento, estirar, encoger, etc.
 
+____________________________________________________
+
+Dimensiones: 
+- https://reactnative.dev/docs/dimensions
+
+Para obtener y usar las dimensiones de los dispositivos.
+Dimensions es un objeto estático, no actualiza las dimensiones al cambiar la pantalla (hay que agregarle un event listener para escuchar eso).
+Existe también un hook de esto para usar: useWindowDimensions - https://reactnative.dev/docs/usewindowdimensions, que este sí actualiza automáticamente.
+
+Usando el ancho y alto del screen o del window, podemos aplicar estilos porcentuales con calculos. Ejemplo:
+<View style={{
+  ...styles.cajaMorada,
+  width: width * 0.20,
+}} />
